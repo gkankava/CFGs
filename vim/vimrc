@@ -1,0 +1,58 @@
+"Base 	
+	syntax on
+	set wildmode=longest,list,full
+	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=0
+	let mapleader =" "
+	set splitbelow splitright
+	set number
+
+"Plugins 
+call plug#begin('~/.vim/plugged')
+
+	Plug 'chun-yang/auto-pairs'
+	Plug 'junegunn/goyo.vim'
+	Plug 'davidhalter/jedi-vim'
+	Plug 'ervandew/supertab'
+	Plug 'othree/javascript-libraries-syntax.vim'
+	Plug 'dikiaap/minimalist'
+	Plug 'scrooloose/nerdtree'
+	Plug 'godlygeek/tabular'
+	Plug 'vim-airline/vim-airline'
+	Plug 'ap/vim-css-color'
+	Plug 'mxw/vim-jsx'
+	Plug 'valloric/youcompleteme'
+
+call plug#end()
+
+
+"Goyo--
+	map <leader>f :Goyo \| set linebreak<CR>
+
+"NERDTREE
+	map <leader>m :NERDTreeToggle<CR>
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"Theme Settings
+	set t_Co=256
+	syntax on
+	colorscheme minimalist
+		"Airlines .. theme S
+		let g:airline_theme='minimalist'
+		let g:airline_powerline_fonts = 1
+		let g:airline#extensions#tabline#enabled = 1
+
+"Tab settings
+   "- new // close
+   	nnoremap <C-n> :tabnew<CR>
+	nnoremap <C-q> :tabclose<CR>
+   "- tab navigation
+	nnoremap <leader>1 1gt 
+	nnoremap <leader>2 2gt
+	nnoremap <leader>3 3gt
+	nnoremap <leader>4 4gt
+	nnoremap <leader>5 5gt
+	nnoremap <leader>6 6gt
+	nnoremap <leader>7 7gt
+	nnoremap <leader>8 8gt
+	nnoremap <leader>9 9gt
+	nnoremap <leader>0 10gt
